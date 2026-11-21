@@ -1,11 +1,25 @@
 <!doctype html>
-<html lang="zh-CN" class="dark">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#141719" />
     <meta name="description" content="即刻 · 本地 Seedance 与 Seedream 创作工作台，让想法成为画面。" />
     <title>即刻 · 创作工作台</title>
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('seedance:theme');
+          var preference = raw ? JSON.parse(raw) : 'system';
+          var dark = preference === 'dark' || (preference !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        } catch (error) {
+          var dark = true;
+        }
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#141719' : '#f7f8f7');
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/assets/mark.svg" />
     <link rel="stylesheet" href="/build/app.css" />
     <script type="module" src="/build/app.js"></script>

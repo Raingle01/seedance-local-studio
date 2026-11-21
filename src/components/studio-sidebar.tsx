@@ -47,7 +47,7 @@ export function StudioSidebar({ studio, search, onSearch, onRename, onDelete }: 
       <SidebarFooter className="gap-4 px-4 pb-5 pt-4">
         <Separator className="bg-border/60" />
         <Button id="open-settings" variant="ghost" onClick={() => { setOpenMobile(false); studio.setSettingsOpen(true); }} className="h-auto justify-start gap-3 px-2 py-2 text-left"><span className="rounded-lg border border-border p-2"><Settings2 className="size-4 text-muted-foreground" /></span><span className="space-y-1"><span className="block text-xs font-normal">工作台设置</span><span className="block text-[10px] font-normal text-muted-foreground">{studio.snapshot.config.hasApiKey ? 'API Key 已配置' : '连接你的 API Key'}</span></span></Button>
-        <div className="flex items-center gap-1.5 px-2 text-[9px] text-muted-foreground/70"><span className="size-1 rounded-full bg-emerald-400/50" />创作记录保存在本机<span className="ml-auto text-[8px]">v2.0</span></div>
+        <div className="flex items-center gap-1.5 px-2 text-[9px] text-muted-foreground/70"><span className="size-1 rounded-full bg-emerald-500 dark:bg-emerald-400/50" />创作记录保存在本机<span className="ml-auto text-[8px]">v2.0</span></div>
       </SidebarFooter>
     </Sidebar>
   );
